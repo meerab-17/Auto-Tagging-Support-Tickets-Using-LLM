@@ -1,10 +1,9 @@
 # Auto-Tagging-Support-Tickets-Using-LLM
-
-## Problem Statement
+##Problem Statement
 Automatically classify customer support tickets into predefined categories (e.g., Billing inquiry, Technical issue) using zero-shot, fine-tuned, and few-shot learning with transformer-based models.
 
 
-##  Dataset:  Free-text Support Ticket Dataset
+##Dataset:  Free-text Support Ticket Dataset
 labels:
 - Billing inquiry  
 - Cancellation request  
@@ -13,26 +12,26 @@ labels:
 - Technical issue  
 
 
-## 🛠 Approaches Used
+##Approaches Used
 
-### 1. **Zero-Shot Learning**
+###1. **Zero-Shot Learning**
 - Used a pre-trained transformer model (e.g., 'facebook/bart-large-mnli')  
 - No training required  
 - Model predicts ticket labels based on semantic similarity  
 - Output: Top label prediction with confidence score  
 
-### 2. **Fine-Tuned Model**
+###2. **Fine-Tuned Model**
 - Fine-tuned a 'bert-base-uncased' model on the labeled dataset  
 - Trained on full data for 3 epochs  
 - Achieved **accuracy ≈ 19.6%**, with balanced precision/recall across labels  
 
-### 3. **Few-Shot Learning**
+###3. **Few-Shot Learning**
 - Trained 'bert-base-uncased' on a small subset of the dataset (5% per class)  
 - Slight performance improvement over zero-shot  
 - Accuracy ≈ **19.66%**, showing potential in low-data environments  
 
 
-##  Results Summary
+##Results Summary
 
 | Method       | Accuracy | Key Notes                                   |
 |--------------|----------|----------------------------------------------|
@@ -44,7 +43,7 @@ labels:
 - Adding top-3 predictions helps mitigate low confidence  
 
 
-##  Top-3 Prediction Mode
+##Top-3 Prediction Mode
 Each model can output the **Top 3 most probable tags** per ticket with their confidence scores — useful for manual review or soft classification.
 
 
